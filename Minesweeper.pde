@@ -133,3 +133,31 @@ public class MSButton
       }
     }
   }
+  public void draw ()
+  {
+    if (flagged)
+      fill(0, 255, 0);
+    else if ( clicked && mines.contains(this) )
+      fill(255, 0, 0);
+    else if (clicked)
+      fill( 225);
+    else
+    fill( 75 );
+
+    rect(x, y, width, height);
+    fill(0);
+    text(myLabel, x+width/2, y+height/2);
+  }
+  public void setLabel(String newLabel)
+  {
+    myLabel = newLabel;
+  }
+  public void setLabel(int newLabel)
+  {
+    myLabel = ""+ newLabel;
+  }
+  public boolean isFlagged()
+  {
+    return flagged;
+  }
+}
